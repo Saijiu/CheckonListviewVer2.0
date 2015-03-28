@@ -10,6 +10,8 @@ public class MyCloseReceiver extends BroadcastReceiver {
 
     @Override
     public void onReceive(Context context, Intent intent) {
+        Intent stopIntent = new Intent(context, MyService.class);
+        context.stopService(stopIntent);
         ExitApplication.getInstance().exit();
     }
 }
