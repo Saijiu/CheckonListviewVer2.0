@@ -11,7 +11,7 @@
 
 ![image](https://github.com/moiling/CheckonListviewVer2.0/blob/master/art/2.gif?raw=true)<br>
 
-一目了然，这两个项目是干什么的也不用我多说了，我就提供一下思路吧！<br>
+一点都看不懂？唉……我也没办法了，能看懂的，我就提供一下思路吧！<br>
 如果看过Service和Broadcast Receiver的话，很容易就懂了！<br>
 ![image](https://github.com/moiling/CheckonListviewVer2.0/blob/master/art/3.png?raw=true)<br>
 
