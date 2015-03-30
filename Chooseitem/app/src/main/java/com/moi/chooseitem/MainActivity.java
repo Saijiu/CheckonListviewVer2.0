@@ -3,6 +3,7 @@ package com.moi.chooseitem;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
+import android.text.TextUtils;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -26,14 +27,16 @@ public class MainActivity extends ActionBarActivity {
             @Override
             public void onClick(View v) {
                 String str = editText.getText().toString();
-                int position = Integer.parseInt(str) - 1;
-                if (position > 1 && position < 400 && !str.equals("")) {
-                    Intent intent = new Intent("com.moi.chooseitem.OTHER_BROADCAST");
-                    intent.putExtra("position", position);
-                    sendBroadcast(intent);
-                } else {
-                    Toast.makeText(MainActivity.this, "You should choose number in 1 to 400", Toast.LENGTH_SHORT).show();
+                if (!TextUtils.isEmpty(str)) {
+                    int position = Integer.parseInt(str) - 1;
+                    if (position > 1 && position < 400) {
+                        Intent intent = new Intent("com.moi.chooseitem.OTHER_BROADCAST");
+                        intent.putExtra("position", position);
+                        sendBroadcast(intent);
+                    } else {
+                        Toast.makeText(MainActivity.this, "You should choose number in 1 to 400", Toast.LENGTH_SHORT).show();
 
+                    }
                 }
 
             }
