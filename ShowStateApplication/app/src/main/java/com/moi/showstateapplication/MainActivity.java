@@ -31,7 +31,7 @@ public class MainActivity extends ActionBarActivity {
 
         //启动时就开启服务，并且让其显示未选中
         Intent startIntent = new Intent(MainActivity.this, MyService.class);
-        Postion.setPostion(-1);
+        Postion.getInstance().setPostion(-1);
         startService(startIntent);
 
         initItem();
@@ -41,15 +41,15 @@ public class MainActivity extends ActionBarActivity {
         mListView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
-                if (position == Postion.getPostion()) {
+                if (position == Postion.getInstance().getPostion()) {
                     //再点击一次取消选择
-                    Postion.setPostion(-1);
+                    Postion.getInstance().setPostion(-1);
                 } else {
                     if (allow) {
                         Item item = itemList.get(position);
                         ItemConentActivity.actionStart(MainActivity.this, item.getText());
                     }
-                    Postion.setPostion(position);
+                    Postion.getInstance().setPostion(position);
                 }
                 adapter.notifyDataSetChanged();
                 Intent startIntent = new Intent(MainActivity.this, MyService.class);

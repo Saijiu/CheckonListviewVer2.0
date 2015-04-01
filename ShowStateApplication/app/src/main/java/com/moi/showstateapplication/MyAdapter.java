@@ -34,7 +34,7 @@ public class MyAdapter extends ArrayAdapter<Item> {
         TextView textView = (TextView)view.findViewById(R.id.tv_item);
         imageView.setImageResource(item.getImageId());
         textView.setText(item.getText());
-        if (position == Postion.getPostion()) {
+        if (position == Postion.getInstance().getPostion()) {
             view.setBackgroundColor(view.getResources().getColor(R.color.gray));
             textView.setTextColor(view.getResources().getColor(R.color.white));
             textView.setText(textView.getText().toString() + "              Choose uncheck");

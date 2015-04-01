@@ -25,7 +25,7 @@ public class MyReceiver extends BroadcastReceiver {
             itemList.add(three);
             itemList.add(four);
         }
-        Postion.setPostion(intent.getIntExtra("position",0));
+        Postion.getInstance().setPostion(intent.getIntExtra("position",0));
         Item item = itemList.get(Postion.getPostion());
         ItemConentActivity.actionStart(context, item.getText());
         Intent startIntent = new Intent(context, MyService.class);

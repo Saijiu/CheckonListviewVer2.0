@@ -26,11 +26,11 @@ public class MyService extends Service {
         Notification notification = new Notification(R.drawable.ic_launcher, "Notifaction comes", System.currentTimeMillis());
         Intent notificationIntent = new Intent("MY_BROADCAST");
         PendingIntent pendingIntent = PendingIntent.getBroadcast(this,0,notificationIntent,0);
-        if (Postion.getPostion() == -1) {
+        if (Postion.getInstance().getPostion() == -1) {
             notification.setLatestEventInfo(this, "Click to close app", "You didn't choose an item.", pendingIntent);
 
         } else {
-            notification.setLatestEventInfo(this, "Click to close app", "You choose No." + (Postion.getPostion() + 1)+ " item.", pendingIntent);
+            notification.setLatestEventInfo(this, "Click to close app", "You choose No." + (Postion.getInstance().getPostion() + 1)+ " item.", pendingIntent);
         }
         startForeground(1, notification);
         return super.onStartCommand(intent, flags, startId);
